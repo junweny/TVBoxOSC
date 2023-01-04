@@ -79,6 +79,11 @@ public class ApiDialog extends BaseDialog {
                 if (history.isEmpty()){
                     history.add("https://ghproxy.com/https://raw.githubusercontent.com/junweny/TVBoxOSC/main/app/src/main/assets/tvbox.json"); 
                     history.add("https://maoyingshi.cc/tvbox/云星日记/1.m3u8"); 
+                }else{
+                    Set<String> tempSet = new HashSet<String>(history);
+                    tempSet.add("https://ghproxy.com/https://raw.githubusercontent.com/junweny/TVBoxOSC/main/app/src/main/assets/tvbox.json");
+                    tempSet.add("https://maoyingshi.cc/tvbox/云星日记/1.m3u8");
+                    history =  new ArrayList<String>(tempSet);
                 }
                 String current = Hawk.get(HawkConfig.API_URL, "");
                 int idx = 0;
