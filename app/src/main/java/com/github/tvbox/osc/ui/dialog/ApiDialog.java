@@ -79,12 +79,7 @@ public class ApiDialog extends BaseDialog {
             public void onClick(View v) {
                 ArrayList<String> history = Hawk.get(HawkConfig.API_HISTORY, new ArrayList<String>());
                 if (history.isEmpty()){
-                    history.add("http://itvbox.cc/tvbox/云星日记/1.m3u8"); 
-                }else{
-                    Set<String> tempSet = new HashSet<String>(history);
-                    tempSet.add("http://itvbox.cc/tvbox/云星日记/1.m3u8");
-                    history =  new ArrayList<String>(tempSet);
-                }
+                    return;
                 String current = Hawk.get(HawkConfig.API_URL, "");
                 int idx = 0;
                 if (history.contains(current))
